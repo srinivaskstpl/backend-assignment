@@ -1,0 +1,290 @@
+{
+	"info": {
+		"_postman_id": "81b540ba-4aa2-4bbd-8008-17138a28fc07",
+		"name": "Backend assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14262228"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "shri@example.com",
+							"type": "text"
+						},
+						{
+							"key": "first_name",
+							"value": "shri",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "kalyani",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "is_superuser",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{localhost}}/api/register/",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "shri@example.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{localhost}}/api/login/",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User profiles",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1NzUwNDM5LCJpYXQiOjE2OTU3NTAxMzksImp0aSI6ImViZjdkY2Q3NjM1MzQxNzE5MDZmNDRmNWM4MDEyYzhiIiwidXNlcl9pZCI6M30.P3IfQF99oVe8iqEQ0e1L8A-NGOOkUERQQQlSBO-oUI0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "srinivas@example.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{localhost}}/api/user-profiles/",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"user-profiles",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create - Post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1NzUwMjEwLCJpYXQiOjE2OTU3NDk5MTAsImp0aSI6Ijg3MmM3NDJkYWI0ZjRlNzY4MWM2MTU0NzFhZmJjYzgzIiwidXNlcl9pZCI6M30.38ePFFAFezrOLgjFZFAQsc3ZHLHbbPSx-jUAEEU6Uvw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "The Python",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "Read the syntax",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{localhost}}/api/post/create/",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"post",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List - Post",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1NzUwMjEwLCJpYXQiOjE2OTU3NDk5MTAsImp0aSI6Ijg3MmM3NDJkYWI0ZjRlNzY4MWM2MTU0NzFhZmJjYzgzIiwidXNlcl9pZCI6M30.38ePFFAFezrOLgjFZFAQsc3ZHLHbbPSx-jUAEEU6Uvw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "srinivas@example.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{localhost}}/api/post/list/",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"post",
+						"list",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add follower",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1NzUwNDM5LCJpYXQiOjE2OTU3NTAxMzksImp0aSI6ImViZjdkY2Q3NjM1MzQxNzE5MDZmNDRmNWM4MDEyYzhiIiwidXNlcl9pZCI6M30.P3IfQF99oVe8iqEQ0e1L8A-NGOOkUERQQQlSBO-oUI0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "follower",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "followed",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{localhost}}/api/follower/create/",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"follower",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
