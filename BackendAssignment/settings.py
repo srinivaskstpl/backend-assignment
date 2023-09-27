@@ -139,9 +139,7 @@ REST_FRAMEWORK = {
 }
 
 # Add JWT settings:
-JWT_AUTH = {
-    "JWT_EXPIRATION_DELTA": datetime.timedelta(hours=1),
-    "JWT_ALLOW_REFRESH": True,
-    "JWT_REFRESH_EXPIRATION_DELTA": datetime.timedelta(days=7),
-    "JWT_AUTH_HEADER_PREFIX": "Bearer ",
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(days=5),
+    'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=15),
 }

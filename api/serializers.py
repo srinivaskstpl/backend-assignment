@@ -27,6 +27,20 @@ class UserSerializer(serializers.ModelSerializer):
 
 class UserRelationshipSerializer(serializers.ModelSerializer):
     follower_name = serializers.CharField(source="follower.full_name", read_only=True)
+    followed = serializers.ReadOnlyField(source="followed.id")
+
+    def validate(self, attrs):
+        validated_data = super().validate(attrs)
+        request_user = self.context.get("request").user
+
+        if UserRelationship.objects.filter(
+            followed=request_user, follower=validated_data.get("follower")
+        ).exists():
+            raise serializers.ValidationError(
+                detail="follower already exist.", code="followed"
+            )
+
+        return validated_data
 
     class Meta:
         model = UserRelationship
