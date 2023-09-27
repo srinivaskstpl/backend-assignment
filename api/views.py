@@ -6,9 +6,13 @@ from rest_framework.response import Response
 
 # local imports
 from api.models import Post, User, UserRelationship
-from api.serializers import (PostListSerializer, PostSerializer,
-                             UserProfileSerializer, UserRelationshipSerializer,
-                             UserSerializer)
+from api.serializers import (
+    PostListSerializer,
+    PostSerializer,
+    UserProfileSerializer,
+    UserRelationshipSerializer,
+    UserSerializer,
+)
 
 
 class UserRegistrationView(generics.CreateAPIView):
